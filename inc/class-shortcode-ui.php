@@ -199,12 +199,12 @@ class Shortcode_UI {
 
 		$min = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-		wp_register_script( 'select2',
+		wp_register_script( 'select2v4',
 			trailingslashit( $this->plugin_url ) . "lib/select2/js/select2.full{$min}.js",
 			array( 'jquery', 'jquery-ui-sortable' ), '4.0.3'
 		);
 
-		wp_register_style( 'select2',
+		wp_register_style( 'select2v4',
 			trailingslashit( $this->plugin_url ) . "lib/select2/css/select2{$min}.css",
 			null, '4.0.3'
 		);

@@ -1413,7 +1413,7 @@ var insertShortcodeList = wp.Backbone.View.extend({
 		this.displayShortcodes( options );
 
 	},
-	
+
 	refresh: function( shortcodeData ) {
 		var options;
 		if ( shortcodeData instanceof Backbone.Collection ) {
@@ -1423,10 +1423,10 @@ var insertShortcodeList = wp.Backbone.View.extend({
 		}
 		this.displayShortcodes( options );
 	},
-	
+
 	displayShortcodes: function(options) {
 		var t = this;
-		
+
 		t.$el.find('.add-shortcode-list').html('');
 		t.options = {};
 		t.options.shortcodes = options.shortcodes;
@@ -1622,10 +1622,10 @@ var SearchShortcode = wp.media.view.Search.extend({
 	tagName:   'input',
 	className: 'search',
 	id:        'media-search-input',
-	
+
 	initialize: function( options ) {
 		this.shortcodeList = options.shortcodeList;
-	}, 
+	},
 
 	attributes: {
 		type:        'search',
@@ -1643,7 +1643,7 @@ var SearchShortcode = wp.media.view.Search.extend({
 		this.el.value = this.model.escape('search');
 		return this;
 	},
-	
+
 	refreshShortcodes: function( shortcodeData ) {
 		this.shortcodeList.refresh( shortcodeData );
 	},
@@ -1768,7 +1768,7 @@ sui.views.editAttributeSelect2Field = sui.views.editAttributeField.extend( {
 
 		this.preselect( $field );
 
-		var $fieldSelect2 = $field.select2({
+		var $fieldSelect2 = $field.select2v4({
 			placeholder: "Search",
 			multiple: this.model.get( 'multiple' ),
 
@@ -1834,7 +1834,7 @@ sui.controllers.MediaController = mediaController.extend({
 	},
 
 	destroySelect2UI: function() {
-		$fieldSelect2.select2( 'close' );
+		$fieldSelect2.select2v4( 'close' );
 	}
 
 });
